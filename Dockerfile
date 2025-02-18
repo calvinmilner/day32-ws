@@ -19,11 +19,12 @@ RUN npm run build
 # Second stage
 FROM caddy:2.9.1
 
-ARG WORK_DIR=/compiledir
+ARG WORK_DIR=/webapp
 
 WORKDIR ${WORK_DIR}
 
-COPY --from=builder /compiledir/dist/day32-ws/browser /webapp
+COPY --from=builder /compiledir/dist/day32-ws/browser /webapp/browser
+
 COPY Caddyfile /webapp
 
 ENV SERVER_PORT=8080
