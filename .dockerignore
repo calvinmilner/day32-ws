@@ -1,0 +1,6 @@
+# Copies the files into memory
+# Then copies this into context
+# Do not want irrelevant files to be copied for the build to reduce time
+node_modules
+dist
+.angular
